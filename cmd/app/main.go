@@ -3,7 +3,7 @@ package main
 import (
 	"archive-service/handlers"
 	"archive-service/repository"
-	"archive-service/pkg"
+	"archive-service/internal/worker"
 
 	"github.com/gin-gonic/gin"
 )

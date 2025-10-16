@@ -3,7 +3,7 @@ package handlers
 import (
     "archive-service/models"
     "archive-service/repository"
-    "archive-service/pkg"
+    "archive-service/internal/worker"
     "net/http"
     "os"
     "path/filepath"
@@ -95,12 +95,6 @@ func (h *Handler) AddFileToTask(c *gin.Context) {
         c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request"})
         return
     }
-
-    // task, exists := h.storage.GetTask(req.TaskID)
-    // if !exists {
-    //     c.JSON(http.StatusNotFound, gin.H{"error": "Task not found"})
-    //     return
-    // }
 
     taskID := c.Param("id")
 
